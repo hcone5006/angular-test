@@ -6,17 +6,11 @@ import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 // import { Todo } from './to-do/todo';
-// import { HelloWorldComponent } from './hello-world/hello-world.component';
-// import { UserItemComponent } from './user-item/user-item.component';
-// import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     // Todo
-    // HelloWorldComponent,
-    // UserItemComponent,
-    // UserListComponent
   ],
   imports: [
     BrowserModule,
