@@ -1,0 +1,48 @@
+<section class="todoapp">
+
+  <header class="header center-block">
+    <div class="inner-header">
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="center-block gray-block"> 
+    </div>
+  </header>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-1 col-sm-3 todo-list-wrapper">
+        <h3 class="text-muted">To do</h3>
+        <input class="new-todo text-muted" placeholder="+ Add item" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+      
+        <section class="main" *ngIf="todos.length > 0">
+          <ul class="todo-list">
+            <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+              <div class="view">
+                <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+                <label>{{todo.title}}</label>
+                <button class="destroy" (click)="removeTodo(todo)"></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+      <div class="col-sm-offset-1 col-sm-3 todo-list-wrapper">
+        <h3 class="text-muted">Doing</h3>
+      </div>
+      <div class="col-sm-offset-1 col-sm-3 todo-list-wrapper">
+        <h3 class="text-muted">Done</h3>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer container" *ngIf="todos.length > 0">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-1 col-sm-3">
+        <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+      </div>
+    </div>
+  </footer>
+
+</section>
