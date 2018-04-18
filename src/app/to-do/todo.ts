@@ -7,3 +7,12 @@ export class Todo {
         Object.assign(this, values);
     }
 }
+
+// private newTodo;
+// addTodo(){
+//   this.todoService.add({ title: this.newTodo, isDone: false }).then(() => {
+//     return this.getTodos();
+//   }).then(() => {
+//     this.newTodo = ''; // clear input form value
+//   });
+// }

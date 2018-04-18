@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
 
+let todos = [
+  { title: 'Install Angular CLI', isDone: true },
+  { title: 'Style app', isDone: true },
+  { title: 'Finish service functionality', isDone: false },
+  { title: 'Setup API', isDone: false },
+];
+
 @Injectable()
 
 export class TodoDataService {
@@ -14,6 +21,10 @@ export class TodoDataService {
 
     constructor() {
 
+    }
+
+    get(){
+        return new Promise(resolve => resolve(todos));
     }
 
     // Simulate POST /todos
